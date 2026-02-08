@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const counter = entry.target;
                 const target = +counter.getAttribute('data-target');
                 const duration = 2000; // ms
-                const increment = target / (duration / 16); // 60fps
+                const increment = target / (duration / 10); // Smoother increment
 
                 let current = 0;
                 const updateCounter = () => {
@@ -75,7 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 counterObserver.unobserve(counter);
             }
         });
-    }, { threshold: 0.5 });
+    }, {
+        threshold: 0.1, // Reduced threshold for better reliability
+        rootMargin: '0px 0px -50px 0px'
+    });
 
     counters.forEach(counter => {
         counterObserver.observe(counter);

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated Neighborhoods | LuxeEstate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0a1628',
+                            gold: '#c9a84c',
+                            goldlight: '#e0c370',
+                            cream: '#f5f0eb',
+                            dark: '#050b14'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-brand-cream text-brand-navy antialiased font-sans">
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold tracking-wider flex items-center gap-2">
+                <i data-lucide="home" class="w-6 h-6 text-brand-gold"></i>
+                LUXE<span class="text-brand-gold">ESTATE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 font-medium tracking-wide text-sm">
+                <a href="index.html#properties" class="hover:text-brand-gold transition-colors">PROPERTIES</a>
+                <a href="neighborhoods.html" class="text-brand-gold font-bold">NEIGHBORHOODS</a>
+                <a href="concierge.html" class="hover:text-brand-gold transition-colors">CONCIERGE</a>
+                <a href="sell.html"
+                    class="px-6 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 uppercase text-xs tracking-widest font-bold">Sell
+                    Property</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-48 pb-24 text-center px-6">
+        <div class="max-w-4xl mx-auto space-y-6 reveal">
+            <span class="text-brand-gold uppercase tracking-[0.3em] text-sm font-bold">Location Intelligence</span>
+            <h1 class="text-5xl md:text-7xl font-serif">Destination <span class="italic text-brand-gold">Guides</span>
+            </h1>
+            <p class="text-gray-500 text-lg md:text-xl font-light leading-relaxed">Discover the lifestyle, amenities,
+                and market trends of the world's most sought-after zip codes.</p>
+        </div>
+    </header>
+
+    <!-- Grid -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 pb-32">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Manhattan -->
+            <div class="group cursor-pointer reveal">
+                <div class="relative overflow-hidden aspect-[4/5] mb-6">
+                    <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=800&q=80"
+                        alt="Manhattan"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <p class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-1">Average Price: $2.4M
+                        </p>
+                        <h3 class="text-2xl font-serif">Upper East Side</h3>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Timeless elegance, tree-lined streets near Central
+                    Park, and the world's most prestigious museums.</p>
+                <div class="flex gap-4">
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Luxury</span>
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Safe</span>
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Elite
+                        Schools</span>
+                </div>
+            </div>
+
+            <!-- Beverly Hills -->
+            <div class="group cursor-pointer reveal delay-100">
+                <div class="relative overflow-hidden aspect-[4/5] mb-6">
+                    <img src="https://images.unsplash.com/photo-1626012480310-9b48b11f71a9?auto=format&fit=crop&w=800&q=80"
+                        alt="Beverly Hills"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <p class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-1">Average Price:
+                            $12.5M</p>
+                        <h3 class="text-2xl font-serif">Beverly Hills 90210</h3>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">The pinnacle of fame and luxury. Mediterranean
+                    villas, iconic palm trees, and world-class shopping on Rodeo Drive.</p>
+                <div class="flex gap-4">
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Privacy</span>
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Sun</span>
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Iconic</span>
+                </div>
+            </div>
+
+            <!-- The Hamptons -->
+            <div class="group cursor-pointer reveal delay-200">
+                <div class="relative overflow-hidden aspect-[4/5] mb-6">
+                    <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80"
+                        alt="Hamptons"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <p class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-1">Average Price: $6.1M
+                        </p>
+                        <h3 class="text-2xl font-serif">Southampton</h3>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Shingle-style estates, pristine beaches, and a
+                    refined summer social calendar for the coastal elite.</p>
+                <div class="flex gap-4">
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Coastal</span>
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Calm</span>
+                    <span
+                        class="bg-brand-navy/5 text-[10px] uppercase tracking-widest font-bold px-3 py-1 text-brand-navy">Heritage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-16 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto text-center">
+            <h4 class="font-serif text-2xl mb-6 italic text-brand-gold">Can't decide on a location?</h4>
+            <p class="text-gray-400 mb-8 max-w-xl mx-auto">Our local specialists provide deep market analysis and
+                lifestyle matching to find your perfect sanctuary.</p>
+            <a href="index.html#contact"
+                class="inline-block border border-brand-gold text-brand-gold px-12 py-4 uppercase tracking-widest transition-all hover:bg-brand-gold hover:text-brand-navy font-bold">Consult
+                a Specialist</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

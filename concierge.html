@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concierge & Lifestyle Management | LuxeEstate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0a1628',
+                            gold: '#c9a84c',
+                            goldlight: '#e0c370',
+                            cream: '#f5f0eb',
+                            dark: '#050b14'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-brand-cream text-brand-navy antialiased font-sans">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 py-6 px-6 md:px-12 bg-white/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold tracking-wider flex items-center gap-2">
+                <i data-lucide="home" class="w-6 h-6 text-brand-gold"></i>
+                LUXE<span class="text-brand-gold">ESTATE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 font-medium tracking-wide text-sm">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">HOME</a>
+                <a href="neighborhoods.html" class="hover:text-brand-gold transition-colors">NEIGHBORHOODS</a>
+                <a href="concierge.html" class="text-brand-gold font-bold">CONCIERGE</a>
+                <a href="sell.html" class="hover:text-brand-gold transition-colors">SELL PROPERTY</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section: White-Glove Experience -->
+    <section class="pt-48 pb-32 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8 reveal">
+                <span class="text-brand-gold uppercase tracking-[0.4em] text-xs font-bold block">Beyond Real
+                    Estate</span>
+                <h1 class="text-5xl md:text-7xl font-serif">A Service Without <br> <span
+                        class="italic text-brand-gold">Boundaries</span></h1>
+                <p class="text-gray-500 text-lg leading-relaxed">Our relationship doesn't end at the closing table.
+                    LuxeEstate Concierge provides seamless integration into your new life, handling every detail with
+                    absolute discretion and excellence.</p>
+
+                <div class="space-y-6 pt-6">
+                    <div class="flex gap-4 items-start border-b border-brand-navy/10 pb-6">
+                        <span class="text-brand-gold font-serif text-3xl">01</span>
+                        <div>
+                            <h3 class="font-bold uppercase tracking-widest text-sm mb-2">Relocation Mastery</h3>
+                            <p class="text-sm text-gray-500">From private jet logistics to international school
+                                placements, we orchestrate every aspect of your move.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start border-b border-brand-navy/10 pb-6">
+                        <span class="text-brand-gold font-serif text-3xl">02</span>
+                        <div>
+                            <h3 class="font-bold uppercase tracking-widest text-sm mb-2">Architectural Advisory</h3>
+                            <p class="text-sm text-gray-500">Access our vetted roster of interior designers, landscape
+                                architects, and security experts.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start border-b border-brand-navy/10 pb-6">
+                        <span class="text-brand-gold font-serif text-3xl">03</span>
+                        <div>
+                            <h3 class="font-bold uppercase tracking-widest text-sm mb-2">Private Management</h3>
+                            <p class="text-sm text-gray-500">Dedicated estate management to ensure your property is
+                                perfectly maintained in your absence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative reveal delay-200">
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-brand-gold rounded-full opacity-10 blur-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200"
+                    alt="Concierge"
+                    class="rounded-2xl shadow-3xl grayscale hover:grayscale-0 transition-all duration-1000">
+                <div class="absolute -bottom-10 -left-10 bg-brand-navy text-white p-12 max-w-sm hidden md:block">
+                    <i data-lucide="quote" class="w-10 h-10 text-brand-gold opacity-20 mb-4"></i>
+                    <p class="font-serif text-xl italic leading-relaxed">"We don't provide services; we provide peace of
+                        mind in its most luxurious form."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Banner -->
+    <section class="h-[60vh] relative min-h-[400px]">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000"
+            class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-brand-navy/40 flex items-center justify-center backdrop-blur-[2px]">
+            <h2 class="text-white text-4xl md:text-6xl font-serif text-center max-w-3xl px-6">Available 24/7. <br>
+                Private. Precise. Powerful.</h2>
+        </div>
+    </section>
+
+    <footer class="py-24 text-center">
+        <a href="index.html#contact"
+            class="bg-brand-navy text-white px-12 py-5 uppercase tracking-widest font-bold hover:bg-brand-gold hover:text-brand-navy transition-all shadow-xl">Contact
+            the Concierge Desk</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
