@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Penthouse | LuxeEstate Property Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0a1628',
+                            gold: '#c9a84c',
+                            goldlight: '#e0c370',
+                            cream: '#f5f0eb',
+                            dark: '#050b14'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .view-content {
+            display: none;
+        }
+
+        .view-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-cream text-brand-navy antialiased font-sans">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 py-6 px-6 md:px-12 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold tracking-wider flex items-center gap-2">
+                <i data-lucide="home" class="w-6 h-6 text-brand-gold"></i>
+                LUXE<span class="text-brand-gold">ESTATE</span>
+            </a>
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Back to
+                    Listings</a>
+                <button
+                    class="bg-brand-navy text-white px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-brand-gold transition-colors">Inquire
+                    Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Property Header -->
+    <main class="pt-32 pb-24 max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div class="space-y-4">
+                <span class="text-brand-gold uppercase tracking-widest text-sm font-bold">Listing ID: #LX-8250</span>
+                <h1 class="text-5xl md:text-6xl font-serif">Azure Penthouse</h1>
+                <p class="text-gray-500 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Upper
+                    East Side, Manhattan, NY</p>
+            </div>
+            <div class="text-right">
+                <p class="text-3xl font-serif">$8,250,000</p>
+                <p class="text-gray-400 text-sm italic">Est. Mortgage: $42,500/mo</p>
+            </div>
+        </div>
+
+        <!-- Interactive Viewer Section -->
+        <div class="bg-brand-dark rounded-xl overflow-hidden shadow-2xl mb-16">
+            <!-- View Controls -->
+            <div class="flex items-center justify-center gap-4 py-6 border-b border-white/5 bg-gray-900/50">
+                <button onclick="switchView('photos')" id="btn-photos"
+                    class="view-btn flex items-center gap-2 px-6 py-2 rounded-full border border-brand-gold text-brand-gold bg-brand-gold/10 text-xs font-bold uppercase tracking-widest transition-all">
+                    <i data-lucide="camera" class="w-4 h-4"></i> Photos
+                </button>
+                <button onclick="switchView('floorplan')" id="btn-floorplan"
+                    class="view-btn flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">
+                    <i data-lucide="layout" class="w-4 h-4"></i> Floor Plan
+                </button>
+                <button onclick="switchView('video')" id="btn-video"
+                    class="view-btn flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">
+                    <i data-lucide="play-circle" class="w-4 h-4"></i> Video Tour
+                </button>
+            </div>
+
+            <!-- View Canvas -->
+            <div class="relative aspect-video bg-black flex items-center justify-center">
+                <div id="view-photos" class="view-content active w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+                        alt="Penthouse Interior" class="w-full h-full object-cover">
+                </div>
+                <div id="view-floorplan"
+                    class="view-content w-full h-full p-8 bg-white flex items-center justify-center">
+                    <img src="https://images.lucidchart.com/lucidchart/proxy/v2/drawings/fd0435b6-6824-4f40-8488-87771765c71d/preview/page/0"
+                        alt="Floor Plan" class="max-h-full object-contain grayscale">
+                    <div class="absolute bottom-8 text-brand-navy/60 text-xs uppercase tracking-[0.3em]">Architectural
+                        Draught v1.2</div>
+                </div>
+                <div id="view-video" class="view-content w-full h-full relative">
+                    <div
+                        class="absolute inset-0 bg-brand-dark/80 flex flex-col items-center justify-center text-center p-12 space-y-6">
+                        <i data-lucide="play"
+                            class="w-20 h-20 text-brand-gold fill-brand-gold cursor-pointer hover:scale-110 transition-transform"></i>
+                        <div>
+                            <h3 class="font-serif text-3xl text-white mb-2">Cinematic Property Tour</h3>
+                            <p class="text-gray-400 max-w-md">Experience the Azure Penthouse through a professional 4K
+                                cinematography experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Specs -->
+        <div class="grid lg:grid-cols-3 gap-16">
+            <div class="lg:col-span-2 space-y-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-gray-200">
+                    <div class="text-center">
+                        <i data-lucide="bed-double" class="w-8 h-8 text-brand-gold mx-auto mb-2"></i>
+                        <p class="text-xs uppercase tracking-widest text-gray-500">Bedrooms</p>
+                        <p class="text-xl font-bold">3 Master</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="bath" class="w-8 h-8 text-brand-gold mx-auto mb-2"></i>
+                        <p class="text-xs uppercase tracking-widest text-gray-500">Bathrooms</p>
+                        <p class="text-xl font-bold">4.5 Luxury</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="ruler" class="w-8 h-8 text-brand-gold mx-auto mb-2"></i>
+                        <p class="text-xs uppercase tracking-widest text-gray-500">Living Area</p>
+                        <p class="text-xl font-bold">3,200 SQFT</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="layers" class="w-8 h-8 text-brand-gold mx-auto mb-2"></i>
+                        <p class="text-xs uppercase tracking-widest text-gray-500">Floor</p>
+                        <p class="text-xl font-bold">PH-A (82nd)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-serif">Property Description</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Elevated above the cityscape, the Azure Penthouse defines the pinnacle of Manhattan luxury.
+                        Featuring double-height ceilings, a private glass-enclosed elevator, and a 1,200-square-foot sky
+                        garden, this residence offers an unparalleled lifestyle.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        The kitchen is appointed with custom Italian cabinetry and professional-grade Sub-Zero and Wolf
+                        appliances. Every room features floor-to-ceiling windows with motorized solar shades, providing
+                        breathtaking 360-degree views of Central Park and the Hudson River.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Agent Sidebar -->
+            <div class="space-y-8">
+                <div class="bg-brand-navy text-white p-8 rounded-xl shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                        alt="Agent" class="w-24 h-24 rounded-full border-2 border-brand-gold mb-6 object-cover">
+                    <h3 class="text-xl font-serif mb-1">Sarah Jenkins</h3>
+                    <p class="text-brand-gold text-xs uppercase tracking-widest mb-6">Senior Luxury Partner</p>
+                    <div class="space-y-4 mb-8">
+                        <button
+                            class="w-full bg-white text-brand-navy py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold transition-colors">Call:
+                            +1 (212) 555-0987</button>
+                        <button
+                            class="w-full border border-white/20 hover:border-brand-gold py-4 text-xs font-bold uppercase tracking-widest transition-colors">Request
+                            a Viewing</button>
+                    </div>
+                    <div class="flex justify-between border-t border-white/10 pt-6">
+                        <i data-lucide="mail"
+                            class="w-5 h-5 opacity-50 cursor-pointer hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="instagram"
+                            class="w-5 h-5 opacity-50 cursor-pointer hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="linkedin"
+                            class="w-5 h-5 opacity-50 cursor-pointer hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="share-2"
+                            class="w-5 h-5 opacity-50 cursor-pointer hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        function switchView(viewId) {
+            // Hide all content
+            document.querySelectorAll('.view-content').forEach(el => el.classList.remove('active'));
+            // Reset all buttons
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.classList.remove('border-brand-gold', 'text-brand-gold', 'bg-brand-gold/10');
+                btn.classList.add('border-white/10', 'text-gray-400');
+            });
+
+            // Show selected content
+            document.getElementById('view-' + viewId).classList.add('active');
+            // Style active button
+            const activeBtn = document.getElementById('btn-' + viewId);
+            activeBtn.classList.remove('border-white/10', 'text-gray-400');
+            activeBtn.classList.add('border-brand-gold', 'text-brand-gold', 'bg-brand-gold/10');
+        }
+    </script>
+</body>
+
+</html>
