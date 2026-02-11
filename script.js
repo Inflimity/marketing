@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
-    
+
     mobileLinks.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
@@ -80,4 +80,35 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
+    // Hero Carousel
+    const heroImage = document.getElementById('hero-image');
+    if (heroImage) {
+        const images = [
+            "https://images.unsplash.com/photo-1600596542815-600021419280?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80",
+            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1653&q=80",
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+            heroImage.style.opacity = '0';
+
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                heroImage.src = images[currentIndex];
+                // Ensure opacity returns to 1 after image loads or immediately if cached
+                heroImage.onload = () => {
+                    heroImage.style.opacity = '1';
+                };
+                // Fallback in case onload doesn't fire (cached)
+                setTimeout(() => {
+                    heroImage.style.opacity = '1';
+                }, 50);
+            }, 1000); // Wait for fade out (matches CSS transition duration)
+        }
+
+        setInterval(changeImage, 5000); // Change every 5 seconds
+    }
 });
